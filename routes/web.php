@@ -12,7 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return redirect('https://madewithlove-exam.devcaffeinated.com');
 });
 
 $router->get('/forecasts', 'WeatherForecastController@forecast');

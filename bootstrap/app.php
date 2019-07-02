@@ -59,9 +59,9 @@ $app->singleton(
 |
 */
 
-// $app->middleware([
-//     App\Http\Middleware\ExampleMiddleware::class
-// ]);
+$app->middleware([
+    App\Http\Middleware\HandleCors::class
+]);
 
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
@@ -94,6 +94,9 @@ $app->register(Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class);
 | can respond to, as well as the controllers that may handle them.
 |
 */
+$app->register(Barryvdh\Cors\ServiceProvider::class);
+
+$app->configure('cors');
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
