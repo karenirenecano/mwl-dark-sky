@@ -21,7 +21,9 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->withFacades(true, [
+    Naughtonium\LaravelDarkSky\Facades\DarkSky::class => 'DarkSky'
+]);
 
 // $app->withEloquent();
 
@@ -75,6 +77,8 @@ $app->singleton(
 | totally optional, so you are not required to uncomment this line.
 |
 */
+
+$app->register(Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class);
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);

@@ -14,3 +14,6 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/forecasts', 'WeatherForecastController@forecast');
+$router->get('/time-machine/forecasts', 'WeatherForecastController@timeMachine');
