@@ -12,8 +12,11 @@
 */
 
 $router->get('/', function () use ($router) {
-    return redirect('https://madewithlove-exam.devcaffeinated.com');
+    return redirect('http://madewithlove-exam.devcaffeinated.com');
 });
 
 $router->get('/forecasts', 'WeatherForecastController@forecast');
 $router->get('/time-machine/forecasts', 'WeatherForecastController@timeMachine');
+$router->get('/test', function(){
+    throw new Exception("server!");
+});

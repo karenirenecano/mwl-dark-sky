@@ -95,8 +95,18 @@ $app->register(Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class);
 |
 */
 $app->register(Barryvdh\Cors\ServiceProvider::class);
+$app->register('Sentry\Laravel\ServiceProvider');
 
 $app->configure('cors');
+$app->configure('sentry');
+
+$directoryNames = ['/tmp/laravel/framework/sessions', '/tmp/laravel/framework/cache', '/tmp/laravel/framework/views'];
+foreach ($directoryNames as $directoryName) {
+    if (!is_dir($directoryName)) {
+        mkdir($directoryName, 0755, true);
+    }
+}
+$app->useStoragePath( '/tmp/laravel' );
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',

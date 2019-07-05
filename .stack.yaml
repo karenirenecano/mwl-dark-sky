@@ -10,7 +10,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: weather-forecast
-      CodeUri: s3://weather-forecast-madewithlove/ed8ac1e49989c019ded329539518c1e8
+      CodeUri: s3://madewithlove-exam-karen/4778db81d6b14ba767b1e4259c26e6eb
       Handler: public/index.php
       Timeout: 30
       Runtime: provided
@@ -36,7 +36,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: laravel-artisan
-      CodeUri: s3://weather-forecast-madewithlove/ed8ac1e49989c019ded329539518c1e8
+      CodeUri: s3://madewithlove-exam-karen/4778db81d6b14ba767b1e4259c26e6eb
       Handler: artisan
       Timeout: 120
       Runtime: provided

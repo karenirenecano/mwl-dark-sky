@@ -80,7 +80,7 @@ class ForecastRepository
         ];
         $darkSkyService = new DarkSkyService;
         $client = new Client;
-        $date = Carbon::now()->subDays($timeInDays);
+        $date = Carbon::tomorrow()->addDay()->subDays($timeInDays);
         $i = 0;
 
         while($i < $timeInDays) {

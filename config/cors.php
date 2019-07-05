@@ -2,8 +2,7 @@
 
 return [
     'allowedOrigins' => [
-        'https://api-weather-forecast.devcaffeinated.com',
-        'http://localhost:8080',
+        'http://madewithlove-exam.devcaffeinated.com',
     ],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
